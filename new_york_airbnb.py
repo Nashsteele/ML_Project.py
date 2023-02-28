@@ -72,13 +72,6 @@ mysbn.barplot(data = df_visual,x = 'neighbourhood_group', y = 'number_of_reviews
 
 mysbn.violinplot(x = df_visual['number_of_reviews'], palette = 'rainbow');
 
-"""!pip install sweetviz
-import sweetviz as mysv
-Airbnb_report = mysv.analyze(df_visual)
-Airbnb_report.show_html('Newyorkairbnbdata.html')
-Airbnb_report.show_notebook()"""
-
-
 from sklearn.cluster import KMeans
 
 sse = []
@@ -92,53 +85,11 @@ mympl.plot(range(1, 15), sse, '-o', c = 'maroon')
 mympl.xlabel('Count of Clusters')
 mympl.ylabel('SSE');
 
-
 kmeans_model = KMeans(n_clusters=5)
 y_kmeans = kmeans_model.fit_predict(df)
 
 centers = kmeans_model.cluster_centers_
 mympl.scatter(centers[:, 0], centers[:, 1], c='black', s=300, alpha=0.2);
-
-"""
-from sklearn.cluster import KMeans, SpectralClustering
-
-from KMeansAlgorithm import KMeansAlgorithm
-
-kmeans = KMeansAlgorithm(df, 5) # setting K=5
-kmeans.fit_model(100) # 100 iterations
-kmeans.plot_kmeans()
-
-
-filtered_label2 = df[y_kmeans == 2]
- 
-filtered_label8 = df[y_kmeans == 5]
- 
-#Plotting the results
-mympl.scatter(filtered_label2[:,0] , filtered_label2[:,1] , color = 'red')
-mympl.scatter(filtered_label8[:,0] , filtered_label8[:,1] , color = 'black')
-mympl.show()
-
-filtered_label2
-
-
-
-#import factoextra
-#library("factoextra")
-
-fviz_cluster(kmeans, data = df,
-             palette = c("red", "blue", "cyan","yellow","green"), 
-             geom = "point",
-             ggtheme = theme_bw()
-             )
-
-"""# **Step 8: Model Validation**"""
-
-"""mympl.scatter(df[], c=y_kmeans, cmap='viridis')
-
-centers = kmeans.cluster_centers_
-mympl.scatter(centers[:, 0], centers[:, 1], c='black', s=300, alpha=0.2);
-
-"""# **Step 9:Model Evaluation and Visualization**"""
 
 from sklearn.metrics import silhouette_score  
 ss = silhouette_score(df, kmeans.labels_)
