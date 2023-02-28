@@ -25,10 +25,6 @@ df.boxplot()
 
 mysbn.boxplot(y=df["price"])
 
-myLE = LabelEncoder()
-df['neighbourhood_group'] = myLE.fit_transform(df['neighbourhood_group']) 
-df['neighbourhood'] = myLE.fit_transform(df['neighbourhood']) 
-df['room_type'] = myLE.fit_transform(df['room_type'])
 
 from pandas.core.groupby import grouper
 group = ['Brooklyn', 'Manhattan', 'Queens', 'Staten Island', 'Bronx']
