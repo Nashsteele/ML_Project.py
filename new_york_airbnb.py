@@ -25,12 +25,6 @@ df.boxplot()
 
 mysbn.boxplot(y=df["price"])
 
-df['number_of_reviews'].plot(kind="box")
-
-df['reviews_per_month'].plot(kind="box")
-
-df['availability_365'].plot(kind="box")
-
 
 from sklearn.preprocessing import LabelEncoder
   
