@@ -2,8 +2,6 @@ import numpy as mynp
 import pandas as mypd
 import matplotlib.pyplot as mympl
 import seaborn as mysbn
-import sklearn
-import math
 
 df = mypd.read_csv('Newyorkairbnbdata.csv')
 df_visual = df
