@@ -25,9 +25,6 @@ df.boxplot()
 
 mysbn.boxplot(y=df["price"])
 
-df['price'].plot(kind="box")
-mympl.show()
-
 df['number_of_reviews'].plot(kind="box")
 
 df['reviews_per_month'].plot(kind="box")
