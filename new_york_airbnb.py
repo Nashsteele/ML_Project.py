@@ -73,11 +73,11 @@ mysbn.barplot(data = df_visual,x = 'neighbourhood_group', y = 'number_of_reviews
 
 mysbn.violinplot(x = df_visual['number_of_reviews'], palette = 'rainbow');
 
-!pip install sweetviz
+"""!pip install sweetviz
 import sweetviz as mysv
 Airbnb_report = mysv.analyze(df_visual)
 Airbnb_report.show_html('Newyorkairbnbdata.html')
-Airbnb_report.show_notebook()
+Airbnb_report.show_notebook()"""
 
 
 from sklearn.cluster import KMeans
