@@ -14,7 +14,6 @@ df.isnull().sum()
 price_avg = df["price"].mean()
 df["price"].fillna(price_avg, inplace = True)
 
-
 avail_avg = df["availability_365"].mean()
 df["availability_365"].fillna(avail_avg, inplace = True)
 
