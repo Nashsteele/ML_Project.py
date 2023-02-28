@@ -4,7 +4,7 @@ import matplotlib.pyplot as mympl
 import seaborn as mysbn
 import math
 
-df = mypd.read_csv('/content/Newyorkairbnbdata.csv')
+df = mypd.read_csv('Newyorkairbnbdata.csv')
 df_visual = df
 
 df.drop(['host_id','latitude','longitude'], inplace=True, axis=1)
