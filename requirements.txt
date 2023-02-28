@@ -3,6 +3,6 @@ pandas
 streamlit
 sklearn
 seaborn
-matplotlib.pyplot
+matplotlib
 numpy
 math
