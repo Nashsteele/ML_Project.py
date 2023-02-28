@@ -25,9 +25,6 @@ df.boxplot()
 
 mysbn.boxplot(y=df["price"])
 
-
-from sklearn.preprocessing import LabelEncoder
-  
 myLE = LabelEncoder()
 df['neighbourhood_group'] = myLE.fit_transform(df['neighbourhood_group']) 
 df['neighbourhood'] = myLE.fit_transform(df['neighbourhood']) 
