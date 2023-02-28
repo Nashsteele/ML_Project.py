@@ -55,26 +55,3 @@ mympl.show()
 mysbn.barplot(data = df_visual,x = 'neighbourhood_group', y = 'number_of_reviews')
 
 mysbn.violinplot(x = df_visual['number_of_reviews'], palette = 'rainbow');
-
-from sklearn.cluster import KMeans
-
-sse = []
-for k in range(1, 15):
-   km = KMeans(n_clusters=k)
-   km.fit(df)
-   sse.append(km.inertia_)
-
-mympl.figure(figsize=(6, 6))
-mympl.plot(range(1, 15), sse, '-o', c = 'maroon')
-mympl.xlabel('Count of Clusters')
-mympl.ylabel('SSE');
-
-kmeans_model = KMeans(n_clusters=5)
-y_kmeans = kmeans_model.fit_predict(df)
-
-centers = kmeans_model.cluster_centers_
-mympl.scatter(centers[:, 0], centers[:, 1], c='black', s=300, alpha=0.2);
-
-from sklearn.metrics import silhouette_score  
-ss = silhouette_score(df, kmeans.labels_)
-print(ss)
